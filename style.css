@@ -1,0 +1,149 @@
+section {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+#h4-roll-text {
+  text-align: center;
+  text-transform: uppercase;
+  color: #dda15e;
+  font-size: 2rem;
+  background-color: #fefae0;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: -1;
+}
+
+.roller {
+  height: 4rem;
+  line-height: 4rem;
+  position: relative;
+  overflow-y: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #dda15e;
+}
+
+#spare-time {
+  font-size: 1rem;
+  font-style: italic;
+  letter-spacing: 1rem;
+  margin-top: 0;
+  color: #fefae0;
+}
+
+.roller #rolltext {
+  position: absolute;
+  top: 0;
+  animation: slide 5s infinite;
+}
+
+@keyframes slide {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: -4rem;
+  }
+  50% {
+    top: -8rem;
+  }
+  72.5% {
+    top: -12.25rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #f1faee;
+    font-size: 2.125rem;
+  }
+
+  .roller {
+    height: 15%;
+    line-height: 15%;
+  }
+
+  #spare-time {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .roller #rolltext {
+    animation: slide-mob 5s infinite;
+  }
+
+  @keyframes slide-mob {
+    0% {
+      top: 0;
+    }
+    25% {
+      top: -2.125rem;
+    }
+    50% {
+      top: -4.25rem;
+    }
+    72.5% {
+      top: -6.375rem;
+    }
+  }
+
+  /****************************/
+  /***** Sliding Sponsors *****/
+  /****************************/
+  @keyframes logoSlider {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% * 4));
+    }
+  }
+
+  .logo-slider {
+    display: flex;
+    animation: logoSlider 40s infinite linear;
+  }
+
+  .logo-slider img {
+    margin: 0 40px;
+  }
+
+  .slider {
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 80px 0;
+    position: relative;
+  }
+
+  .slider::before,
+  .slider::after {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+
+  .slider::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff);
+  }
+
+  .slider::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+  }
+}
